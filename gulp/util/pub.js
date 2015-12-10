@@ -15,7 +15,7 @@ function Prepub(cfg) {
 		}
 		//发送post请求
 		var command = 'curl -F "file=@' + file.path + '" -F "publishType=' +
-			publishType + '" -F "group=' + group +
+			publishType + '" -F "group=' + group + '" -F "clearCache=true' +
 			'" -F "repoName=' + repoName + '" -F "filePath=' + filePath +
 			'"  http://hfe.sankuai.com/cdn/upload';
 		// var command = 'curl -F "file=@' + file.path + '" -F "publishType=' + publishType + '"  -F "version=' + version + '" -F "group=' + group + '" -F "repoName=' + repoName + '" -F "filePath=' + filePath + '"  http://localhost:8000/cdn/upload';
