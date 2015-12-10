@@ -1,22 +1,40 @@
 {
-  "name": "generator-hfe-utils",
-  "version": "1.0.0",
-  "description": "for generator-hfe",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Real0n/generator-hfe-utils.git"
-  },
-  "keywords": [
+	"name": "generator-hfe-utils",
+	"version": "1.0.0",
+	"description": "for generator-hfe",
+	"main": "./lib/index",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Real0n/generator-hfe-utils.git"
+	},
+	"keywords": [
     "generator"
   ],
-  "author": "maquan",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Real0n/generator-hfe-utils/issues"
-  },
-  "homepage": "https://github.com/Real0n/generator-hfe-utils#readme"
+	"author": "maquan",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/Real0n/generator-hfe-utils/issues"
+	},
+	"homepage": "https://github.com/Real0n/generator-hfe-utils#readme",
+	"dependencies": {
+		"colors": "^1.1.2",
+		"fs-extra": "^0.26.2",
+		"gulp": "^3.9.0",
+		"gulp-load-plugins": "^1.1.0",
+		"del": "^2.0.2",
+		"gulp-combo": "^0.1.9",
+		"gulp-cssmin": "^0.1.7",
+		"gulp-html-ssi2": "^0.1.0",
+		"gulp-jsmin": "^0.1.5",
+		"gulp-json-editor": "^2.2.1",
+		"gulp-pre-combo": "^1.0.8",
+		"gulp-rename": "^1.2.2",
+		"gulp-sass": "^2.0.4",
+		"path": "^0.12.7",
+		"proxrox": "^1.7.2",
+		"through2": "^2.0.0"
+	}
 }
