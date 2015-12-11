@@ -10,13 +10,13 @@ module.exports = function (gulp, Plugin, config) {
 		var baseUri = 'http://awp-assets.meituan.net/??';
 
 		if (useCombo) {
-			gulp.src('src/**/*.html')
+			gulp.src('build/**/*.html')
 				.pipe(Plugin.precombo(repoinfo))
 				.pipe(Plugin.combo(baseUri, null))
 				.pipe(Plugin.ssi())
 				.pipe(gulp.dest('build'));
 		} else {
-			gulp.src('src/**/*.html')
+			gulp.src('build/**/*.html')
 				.pipe(uc({
 					url: 'http://awp-assets.meituan.net',
 					group: repoinfo.group.toLowerCase(),
@@ -31,13 +31,13 @@ module.exports = function (gulp, Plugin, config) {
 		var repoinfo = require(process.cwd() + '/repo-info.json');
 		var baseUri = 'http://awp-assets.sankuai.com/??';
 		if (useCombo) {
-			gulp.src('src/**/*.html')
+			gulp.src('build/**/*.html')
 				.pipe(Plugin.precombo(repoinfo))
 				.pipe(Plugin.combo(baseUri, null))
 				.pipe(Plugin.ssi())
 				.pipe(gulp.dest('build'));
 		} else {
-			gulp.src('src/**/*.html')
+			gulp.src('build/**/*.html')
 				.pipe(uc({
 					url: 'http://awp-assets.sankuai.com',
 					group: repoinfo.group.toLowerCase(),
