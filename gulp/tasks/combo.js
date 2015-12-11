@@ -5,7 +5,7 @@ var uc = require(path.join(__dirname, '../url-complete'));
 
 module.exports = function (gulp, Plugin, config) {
 	var useCombo = Plugin.repoInfoJSON.useCombo || false;
-	gulp.task('hfe-combo', ['hfe-del', 'hfe-copyto'], function () {
+	gulp.task('hfe-combo', function () {
 		var repoinfo = require(process.cwd() + '/repo-info.json');
 		var baseUri = 'http://awp-assets.meituan.net/??';
 
@@ -27,7 +27,7 @@ module.exports = function (gulp, Plugin, config) {
 				.pipe(gulp.dest('build'));
 		}
 	});
-	gulp.task('hfe-combo:prepub', ['hfe-del', 'hfe-copyto'], function () {
+	gulp.task('hfe-combo:prepub',  function () {
 		var repoinfo = require(process.cwd() + '/repo-info.json');
 		var baseUri = 'http://awp-assets.sankuai.com/??';
 		if (useCombo) {
