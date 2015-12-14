@@ -24,6 +24,8 @@ module.exports = {
 	pubConfig: {
 		"vip": ['pc:vip:publish', 'pc:vip:prepub'],
 		"h5": ['h5:publish', 'h5:prepub'],
-		"pc": ['pc:publish', 'pc:prepub']
+		"pc": ['pc:publish', 'pc:prepub'],
+		"test01": ['test01'],
+		"test02": ['test02']
 	}
 }
