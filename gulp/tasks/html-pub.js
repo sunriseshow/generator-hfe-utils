@@ -16,7 +16,7 @@ module.exports = function (gulp, Plugin, config) {
 				repoName: repoinfo.name.toLowerCase(),
 				publishType: toTest[i],
 			}
-			gulp.src('build/pages/**/*.html')
+			gulp.src('build/**/*.html')
 				.pipe(prepub(cfg));
 		}
 	});
@@ -28,7 +28,7 @@ module.exports = function (gulp, Plugin, config) {
 			repoName: repoinfo.name.toLowerCase(),
 			publishType: publishType
 		}
-		gulp.src('build/pages/**/*.html')
+		gulp.src('build/**/*.html')
 			.pipe(prepub(cfg));
 	});
 };
