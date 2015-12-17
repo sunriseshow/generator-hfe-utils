@@ -33,7 +33,7 @@ module.exports = function (gulp, Plugin, config) {
 					var typeArr = res.publishType;
 					for (var i = 0, len = typeArr.length; i < len; i++) {
 						if (typeArr[i] == 'default') {
-							typeArr[i] = pubconfig[Plugin.repoInfoJSON.publishType][0];
+							typeArr[i] = pubconfig[Plugin.repoInfoJSON.publishType][1];
 						}
 					}
 					Plugin.repoInfoJSON.timestamp = +new Date();
