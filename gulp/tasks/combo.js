@@ -1,7 +1,7 @@
 'use strict';
 
 var path = require('path');
-var uc = require(path.join(__dirname, '../url-complete'));
+var uc = require('url-complete');
 
 module.exports = function (gulp, Plugin, config) {
 	var useCombo = Plugin.repoInfoJSON.useCombo || false;

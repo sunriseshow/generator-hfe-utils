@@ -36,6 +36,7 @@
     "gulp-sass": "^2.0.4",
     "path": "^0.12.7",
     "proxrox": "^1.7.2",
-    "through2": "^2.0.0"
+    "through2": "^2.0.0",
+    "url-complete": "^1.0.0"
   }
 }
