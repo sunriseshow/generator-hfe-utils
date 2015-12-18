@@ -1,6 +1,6 @@
 {
   "name": "generator-hfe-utils",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "for generator-hfe",
   "main": "./lib/index",
   "scripts": {
