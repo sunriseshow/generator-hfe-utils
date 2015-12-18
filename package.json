@@ -23,7 +23,7 @@
     "colors": "^1.1.2",
     "del": "^2.0.2",
     "fs-extra": "^0.26.2",
-    "gulp": "^3.9.0",
+    "gulp": "git+https://github.com/gulpjs/gulp.git#4.0",
     "gulp-combo": "^0.1.9",
     "gulp-cssmin": "^0.1.7",
     "gulp-html-ssi2": "^0.1.0",
@@ -36,6 +36,7 @@
     "gulp-sass": "^2.0.4",
     "path": "^0.12.7",
     "proxrox": "^1.7.2",
-    "through2": "^2.0.0"
+    "through2": "^2.0.0",
+    "undertaker-forward-reference": "^1.0.0"
   }
 }

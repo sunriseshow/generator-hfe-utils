@@ -18,7 +18,7 @@ module.exports = function (gulp, Plugin, config) {
 			}))
 			.pipe(gulp.dest("./"));
 	});
-	gulp.task('shell_modify-offline-json', ['hfe-mj'], function () {
+	gulp.task('shell_modify-offline-json', gulp.series('hfe-mj', function () {
 		console.log('modify-offline-json')
-	});
+	}));
 };
