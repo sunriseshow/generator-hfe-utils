@@ -7,6 +7,6 @@ module.exports = function (gulp, Plugin, config) {
 			.pipe(gulp.dest('src'));
 	});
 	gulp.task('hfe-sass:watch', function () {
-		gulp.watch('src/**/*.scss', ['sass']);
+		gulp.watch('src/**/*.scss', ['hfe-sass']);
 	});
 };
