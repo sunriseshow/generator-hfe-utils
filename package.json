@@ -1,6 +1,6 @@
 {
   "name": "generator-hfe-utils",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "for generator-hfe",
   "main": "./lib/index",
   "scripts": {
@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/Real0n/generator-hfe-utils#readme",
   "dependencies": {
+    "browser-sync": "^2.10.1",
     "colors": "^1.1.2",
     "del": "^2.0.2",
     "fs-extra": "^0.26.2",
@@ -35,7 +36,6 @@
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.0.4",
     "path": "^0.12.7",
-    "proxrox": "^1.7.2",
     "through2": "^2.0.0",
     "url-complete": "^1.0.1"
   }

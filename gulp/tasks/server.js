@@ -1,13 +1,20 @@
 'use strict';
 var exec = require('child_process').exec;
 module.exports = function (gulp, Plugin, config) {
-	gulp.task('server', ['watch','hfe-sass'], function () {
-		exec('proxrox stop ;proxrox start repo-info.json', function (err, stdout, stderr) {
-			console.log(stdout);
-			if (stderr) {
-				console.log(stdout);
-				console.log(stderr);
-			}
+	var browserSync = require('browser-sync').create();
+	var browserSyncPorxy = Plugin.repoInfoJSON.browserSyncPorxy;
+	var port = Plugin.repoInfoJSON.port;
+	var path = Plugin.repoInfoJSON.root;
+	gulp.task('browser-sync', function () {
+		browserSync.init({
+			files: path,
+			server: {
+				directory: true,
+				baseDir: path
+			},
+			port: port,
+			open: false
 		});
 	});
+	gulp.task('server', ['watch', 'browser-sync']);
 };
