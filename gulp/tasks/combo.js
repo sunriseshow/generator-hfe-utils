@@ -1,6 +1,5 @@
 'use strict';
 
-var path = require('path');
 var uc = require('url-complete');
 
 module.exports = function (gulp, Plugin, config) {
@@ -27,7 +26,7 @@ module.exports = function (gulp, Plugin, config) {
 				.pipe(gulp.dest('build'));
 		}
 	});
-	gulp.task('hfe-combo:prepub',  function () {
+	gulp.task('hfe-combo:prepub', function () {
 		var repoinfo = require(process.cwd() + '/repo-info.json');
 		var baseUri = 'http://awp-assets.sankuai.com/??';
 		if (useCombo) {
