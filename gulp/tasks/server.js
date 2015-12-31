@@ -2,6 +2,7 @@
 var exec = require('child_process').exec;
 module.exports = function (gulp, Plugin, config) {
 	var browserSync = require('browser-sync').create();
+	var ssi = require('browsersync-ssi');
 	var browserSyncPorxy = Plugin.repoInfoJSON.browserSyncPorxy;
 	var port = Plugin.repoInfoJSON.port;
 	var path = Plugin.repoInfoJSON.root;
@@ -10,7 +11,11 @@ module.exports = function (gulp, Plugin, config) {
 			files: path,
 			server: {
 				directory: true,
-				baseDir: path
+				baseDir: path,
+				middleware: ssi({
+					baseDir: process.cwd() + '/src',
+					ext: '.html'
+				})
 			},
 			port: port,
 			open: false

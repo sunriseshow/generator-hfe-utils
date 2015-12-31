@@ -1,6 +1,6 @@
 {
   "name": "generator-hfe-utils",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "for generator-hfe",
   "main": "./lib/index",
   "scripts": {
@@ -21,6 +21,7 @@
   "homepage": "https://github.com/Real0n/generator-hfe-utils#readme",
   "dependencies": {
     "browser-sync": "^2.10.1",
+    "browsersync-ssi": "^0.2.4",
     "colors": "^1.1.2",
     "del": "^2.0.2",
     "fs-extra": "^0.26.2",
