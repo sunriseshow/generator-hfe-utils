@@ -1,6 +1,6 @@
 {
   "name": "generator-hfe-utils",
-  "version": "1.0.16",
+  "version": "1.0.17",
   "description": "for generator-hfe",
   "main": "./lib/index",
   "scripts": {
@@ -28,15 +28,15 @@
     "gulp": "^3.9.0",
     "gulp-combo": "^0.1.9",
     "gulp-cssmin": "^0.1.7",
-    "gulp-html-ssi2": "^0.1.0",
     "gulp-jsmin": "^0.1.5",
     "gulp-json-editor": "^2.2.1",
     "gulp-load-plugins": "^1.1.0",
-    "gulp-pre-combo": "^1.0.11",
+    "gulp-pre-combo": "^1.0.12",
     "gulp-prompt": "^0.1.2",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.0.4",
     "path": "^0.12.7",
+    "ssi": "^0.3.0",
     "through2": "^2.0.0",
     "url-complete": "^1.0.4"
   }
