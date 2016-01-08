@@ -26,4 +26,4 @@ by maquan@meituan.com
 ### changelog
 * 1.0.1 新增发布接口强缓存刷新
 * 1.0.5 支持多套测试环境
-* 1.0.9 去掉proxrox启动服务，去掉ssi功能，改为browser-sync(默认关闭sync options)。
+* 1.0.9 去掉proxrox启动服务，去掉ssi功能，改为browser-sync。
