@@ -18,7 +18,8 @@ module.exports = function (gulp, Plugin, config) {
 				})
 			},
 			port: port,
-			open: false
+			open: false,
+			ghostMode: false
 		});
 	});
 	gulp.task('server', ['watch', 'browser-sync']);
