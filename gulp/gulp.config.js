@@ -10,7 +10,7 @@ module.exports = {
             var tag = this.tag(branch);
             var add = this.add();
             var commit = this.commit(branch, msg);
-            return add + ' && ' + commit + ' && ' + tag + ' && ' + 'git push origin publish/' + branch + ':publish/' + branch;
+            return add + ' && ' + commit + ' && ' + 'git push origin daily/' + branch + ':daily/' + branch;
         },
         tag: function (branch) {
             return 'git tag publish/' + branch;

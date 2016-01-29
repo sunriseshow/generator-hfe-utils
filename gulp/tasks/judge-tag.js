@@ -23,9 +23,6 @@ module.exports = function (gulp, Plugin, config) {
             if (stdout.indexOf(currentTag) > -1) {
                 var command = 'git tag -d ' + currentTag + ' && git push origin :refs/tags/' + currentTag;
                 exec(command, function (err, stdout, stderr) {
-                    if (err) {
-                        console.log(err);
-                    }
                     gitTagFunc(currentTag);
                 });
             } else {
