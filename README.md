@@ -27,3 +27,8 @@ by maquan@meituan.com
 * 1.0.1 新增发布接口强缓存刷新
 * 1.0.5 支持多套测试环境
 * 1.0.19 去掉proxrox启动服务，去掉ssi功能，改为browser-sync(默认关闭sync options)。
+* 1.0.20 项目使用eslint做校验
+* 1.0.21：
+    * prepub默认选中default
+    * 去掉hfe标签
+    * publish增加提交过程
