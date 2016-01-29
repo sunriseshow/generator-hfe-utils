@@ -39,5 +39,8 @@
     "ssi": "^0.3.0",
     "through2": "^2.0.0",
     "url-complete": "^1.0.4"
+  },
+  "devDependencies": {
+    "eslint-config-hfe": "^1.0.5"
   }
 }

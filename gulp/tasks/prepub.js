@@ -18,7 +18,7 @@ module.exports = function (gulp, Plugin, config) {
 				type: 'checkbox',
 				name: 'publishType',
 				message: '请选择你要发布的测试环境（可多选）：',
-				choices: ['default', 'test01', 'test02'],
+				choices: ['default', 'test01', 'test02', 'test03', 'test04'],
 			}, {
 				type: 'input',
 				name: 'msg',
