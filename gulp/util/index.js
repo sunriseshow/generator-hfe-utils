@@ -15,6 +15,7 @@ function getBiggestVersion (A) {
     }
 
     var r = findMax(findMax(findMax(a, 0), 1), 2);
+    console.log(r)
     return r[0];
 }
 
@@ -28,13 +29,14 @@ function findMax (a, index) {
         t.push(Number(a[i][index]));
     }
     var max = Math.max.apply(this, t);
+
     for (var j = 0; j < a.length; j++) {
-        if (a[i][index] === max) {
-            b.push(i);
+        if (a[j][index] === max) {
+            b.push(j);
         }
     }
     for (var m = 0; m < b.length; m++) {
-        r.push(a[b[i]]);
+        r.push(a[b[m]]);
     }
     return r;
 }
