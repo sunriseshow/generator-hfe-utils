@@ -32,3 +32,4 @@ by maquan@meituan.com
     * prepub默认选中default
     * 去掉hfe标签
     * publish增加提交过程
+* 1.1.4 删除hfe标记，更改combo规则

@@ -14,7 +14,7 @@ module.exports = function (gulp, Plugin, config) {
     gulp.task('hfe-judgetag', function () {
         var version = Plugin.repoInfoJSON.version;
         var ev = gulp.env.env === 'prepub' ? 'daily' : 'publish';
-        var currentTag = 'hfe-awp/' + ev + '/' + version;
+        var currentTag = 'awp/' + ev + '/' + version;
 
         exec('git tag', function (err, stdout, stderr) {
             if (err) {
