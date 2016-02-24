@@ -7,16 +7,20 @@ module.exports = function (gulp, Plugin, config) {
     var command = gulpConfig.exec;
     gulp.task('prepub', function () {
         var prompt = require('gulp-prompt');
-
-        // var choices = Plugin.repoInfoJSON.publishType;
         var pubconfig = config.pubConfig;
-
+        var pt = Plugin.repoInfoJSON.publishType;
+        var choicesArr = [];
+        if (pt === 'pc') { // 单独为pc类型的发布项增加一套staging环境
+            choicesArr = ['default', 'pc:staging', 'test01', 'test02', 'test03', 'test04'];
+        } else {
+            choicesArr = ['default', 'test01', 'test02', 'test03', 'test04'];
+        }
         gulp.src(' ')
             .pipe(prompt.prompt([{
                 type: 'checkbox',
                 name: 'publishType',
                 message: '请选择你要发布的测试环境（可多选）：',
-                choices: ['default', 'test01', 'test02', 'test03', 'test04']
+                choices: choicesArr
             }, {
                 type: 'input',
                 name: 'msg',

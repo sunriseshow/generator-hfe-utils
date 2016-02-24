@@ -22,6 +22,7 @@ function Prepub (c) {
                 '" -F "repoName=' + repoName + '" -F "filePath=' + filePath +
                 '"  http://hfe.sankuai.com/cdn/upload';
             // var command = 'curl -F "file=@' + file.path + '" -F "publishType=' + publishType + '"  -F "version=' + version + '" -F "group=' + group + '" -F "repoName=' + repoName + '" -F "filePath=' + filePath + '"  http://localhost:8000/cdn/upload';
+
             exec(command, function (err, stdout, stderr) {
                 if (err) {
                     console.log(err);
@@ -32,8 +33,8 @@ function Prepub (c) {
                 } else {
                     console.log(('文件：' + stdout + ' 发布成功！').green);
                 }
-                cb(null, file);
             });
+            cb(null, file);
         }
     });
 }

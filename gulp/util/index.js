@@ -15,7 +15,6 @@ function getBiggestVersion (A) {
     }
 
     var r = findMax(findMax(findMax(a, 0), 1), 2);
-    console.log(r)
     return r[0];
 }
 

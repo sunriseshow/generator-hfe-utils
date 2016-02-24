@@ -7,7 +7,6 @@ module.exports = {
             return add + ' && ' + commit + ' && ' + 'git push origin daily/' + branch + ':daily/' + branch;
         },
         publish: function (branch, msg) {
-            var tag = this.tag(branch);
             var add = this.add();
             var commit = this.commit(branch, msg);
             return add + ' && ' + commit + ' && ' + 'git push origin daily/' + branch + ':daily/' + branch;
@@ -27,6 +26,7 @@ module.exports = {
         'vip': ['pc:vip:publish', 'pc:vip:prepub'],
         'h5': ['h5:publish', 'h5:prepub'],
         'pc': ['pc:publish', 'pc:prepub'],
+        'staging': ['pc:staging'],
         'test01': ['test01'],
         'test02': ['test02'],
         'test03': ['test03'],
