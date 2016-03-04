@@ -13,23 +13,25 @@ function Prepub (c) {
         } else {
             filePath = (file.path.split(repoName + '/build/')[1]);
         }
-        publish(file.path, publishType, group, repoName, filePath);
+
+        if (filePath) {
+            publish(file.path, publishType, group, repoName, filePath);
+        } else {
+            console.log('HTML发布失败，请检查`工程名`与`repo-info.json`中的`name`字段值是否一致'.red);
+        }
 
         function publish (path, publishType, group, repoName, filePath) {
-            // 发送post请求
             var command = 'curl -F "file=@' + path + '" -F "publishType=' +
                 publishType + '" -F "group=' + group + '" -F "clearCache=true' +
                 '" -F "repoName=' + repoName + '" -F "filePath=' + filePath +
                 '"  http://hfe.sankuai.com/cdn/upload';
-            // var command = 'curl -F "file=@' + file.path + '" -F "publishType=' + publishType + '"  -F "version=' + version + '" -F "group=' + group + '" -F "repoName=' + repoName + '" -F "filePath=' + filePath + '"  http://localhost:8000/cdn/upload';
-
             exec(command, function (err, stdout, stderr) {
                 if (err) {
                     console.log(err);
+                    return;
                 }
-                // console.log('command:' + command);
                 if (stdout === '500') {
-                    console.log(('文件：' + stdout + ' 发布失败！').red);
+                    console.log(('文件：' + filePath + ' 发布失败！').red);
                 } else {
                     console.log(('文件：' + stdout + ' 发布成功！').green);
                 }
