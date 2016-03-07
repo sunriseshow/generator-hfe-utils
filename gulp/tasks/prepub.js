@@ -59,22 +59,25 @@ module.exports = function (gulp, Plugin, config) {
                         console.log(err);
                     }
                     exec(command.prepub(Plugin.repoInfoJSON.version, res.msg), function (err, stdout, stderr) {
-                        var msg = '命令 >>> ' + command.prepub(Plugin.repoInfoJSON.version, res.msg) + ' <<< 的执行结果：';
-                        console.log(msg.green);
-                        if (err) {
-                            console.log(err);
-                        } else {
-                            console.log(stdout);
-                            console.log(stderr);
-                            var gulpJudge = spawn('gulp', ['hfe-judgetag', '--env', 'prepub']);
-                            gulpJudge.stdout.pipe(process.stdout);
-                            gulpJudge.stderr.pipe(process.stderr);
-                            gulpJudge.on('close', function (code) {
-                                if (code === 0) {
-                                    gulp.run('hfe-prepub:html');
-                                }
-                            });
-                        }
+                        exec('git describe --contains --all HEAD|tr -s \'\n\'', function (e, o, se) {
+                            // o ==> daily/0.1.0 当前分支名
+                            var msg = '命令 >>> ' + command.prepub(o, res.msg) + ' <<< 的执行结果：';
+                            console.log(msg.green);
+                            if (err) {
+                                console.log(err);
+                            } else {
+                                console.log(stdout);
+                                console.log(stderr);
+                                var gulpJudge = spawn('gulp', ['hfe-judgetag', '--env', 'prepub']);
+                                gulpJudge.stdout.pipe(process.stdout);
+                                gulpJudge.stderr.pipe(process.stderr);
+                                gulpJudge.on('close', function (code) {
+                                    if (code === 0) {
+                                        gulp.run('hfe-prepub:html');
+                                    }
+                                });
+                            }
+                        });
                     });
                 });
                 buildPrepub.stdout.pipe(process.stdout);
