@@ -3,7 +3,7 @@ var exec = require('child_process').exec;
 
 function Prepub (c) {
     var cfg = c || {};
-    return through.obj(function (file, env, cb) {
+    return through.obj(function (file, env, callback) {
         var publishType = cfg.publishType;
         var group = cfg.group.toLowerCase();
         var repoName = cfg.repoName;
@@ -36,8 +36,8 @@ function Prepub (c) {
                     console.log(('文件：' + stdout + ' 发布成功！').green);
                 }
             });
-            cb(null, file);
         }
+        callback();
     });
 }
 module.exports = Prepub;
