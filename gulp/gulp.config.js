@@ -4,12 +4,12 @@ module.exports = {
         prepub: function (branch, msg) {
             var add = this.add();
             var commit = this.commit(branch, msg);
-            return add + ' && ' + commit + ' && ' + 'git push origin daily/' + branch + ':daily/' + branch;
+            return add + ' && ' + commit + ' && ' + 'git push origin ' + branch + ':' + branch;
         },
         publish: function (branch, msg) {
             var add = this.add();
             var commit = this.commit(branch, msg);
-            return add + ' && ' + commit + ' && ' + 'git push origin daily/' + branch + ':daily/' + branch;
+            return add + ' && ' + commit + ' && ' + 'git push origin ' + branch + ':' + branch;
         },
         tag: function (branch) {
             return 'git tag publish/' + branch;

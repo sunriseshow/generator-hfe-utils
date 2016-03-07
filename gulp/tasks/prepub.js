@@ -58,8 +58,9 @@ module.exports = function (gulp, Plugin, config) {
                     if (err) {
                         console.log(err);
                     }
-                    exec(command.prepub(Plugin.repoInfoJSON.version, res.msg), function (err, stdout, stderr) {
-                        exec('git describe --contains --all HEAD|tr -s \'\n\'', function (e, o, se) {
+                    exec('git rev-parse --abbrev-ref HEAD', function (e, out, se) {
+                        var o = out.replace(/\r|\n/ig,"");
+                        exec(command.prepub(o, res.msg), function (err, stdout, stderr) {
                             // o ==> daily/0.1.0 当前分支名
                             var msg = '命令 >>> ' + command.prepub(o, res.msg) + ' <<< 的执行结果：';
                             console.log(msg.green);

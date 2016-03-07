@@ -13,9 +13,10 @@ module.exports = function (gulp, Plugin, config) {
             if (err) {
                 console.log(err.red);
             } else {
-                exec(command.publish(branch, '分支 ' + branch + ' 上线'), function (err, stdout, stderr) {
-                    exec('git describe --contains --all HEAD|tr -s \'\n\'', function (e, o, se) { // o ==> daily/0.1.0 当前分支名
-                        var msg = '命令 >>> ' + command.prepub(o, '发布分支' + branch) + ' <<< 的执行结果：';
+                exec('git rev-parse --abbrev-ref HEAD', function (e, out, se) { // o ==> daily/0.1.0 当前分支名
+                    var o = out.replace(/\r|\n/ig,"");
+                    exec(command.publish(o, '分支 ' + o + ' 上线'), function (err, stdout, stderr) {
+                        var msg = '命令 >>> ' + command.prepub(o, '发布分支' + o) + ' <<< 的执行结果：';
                         console.log(msg.green);
                         if (err) {
                             console.log(err);
