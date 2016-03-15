@@ -12,7 +12,8 @@ module.exports = function (gulp, Plugin, config) {
 
         exec('git tag', function (err, stdout, stderr) {
             if (err) {
-                console.log(err);
+                console.log(err.red);
+                return;
             }
             if (stdout.indexOf(currentTag) === -1) {
                 var gulpBuild = exec('gulp build', function (gberr, gbout, gb) {

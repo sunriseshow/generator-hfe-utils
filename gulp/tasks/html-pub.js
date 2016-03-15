@@ -1,5 +1,4 @@
 var prepub = require('../util/pub');
-
 module.exports = function (gulp, Plugin, config) {
     var repoinfo = Plugin.repoInfoJSON;
     var pt = repoinfo.publishType;
