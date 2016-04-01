@@ -5,7 +5,12 @@ module.exports = function (gulp, Plugin, config) {
 
     gulp.task('hfe-combo', ['ssi'], function () {
         var repoinfo = require(process.cwd() + '/repo-info.json');
-        var baseUri = 'http://awp-assets.meituan.net/;;';
+        var baseUri
+        if (repoinfo.useHttps || repoinfo.useHttps === 'true') {
+            baseUri = 'https://awp-assets.meituan.net/;;';
+        } else {
+            baseUri = 'http://awp-assets.meituan.net/;;';
+        }
         if (useCombo) {
             gulp.src('build/**/*.html')
                 .pipe(Plugin.precombo(repoinfo))
@@ -24,7 +29,13 @@ module.exports = function (gulp, Plugin, config) {
     });
     gulp.task('hfe-combo:prepub', ['ssi'], function () {
         var repoinfo = require(process.cwd() + '/repo-info.json');
-        var baseUri = 'http://awp-assets.sankuai.com/;;';
+        var baseUri
+        if (repoinfo.useHttps || repoinfo.useHttps === 'true') {
+            baseUri = 'https://awp-assets.sankuai.com/;;';
+        } else {
+            baseUri = 'http://awp-assets.sankuai.com/;;';
+        }
+
         if (useCombo) {
             gulp.src('build/**/*.html')
                 .pipe(Plugin.precombo(repoinfo))
