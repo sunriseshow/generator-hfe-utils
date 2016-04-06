@@ -16,7 +16,7 @@ module.exports = function (gulp, Plugin, config) {
                 return;
             }
             if (stdout.indexOf(currentTag) === -1) {
-                var gulpBuild = exec('gulp build', function (gberr, gbout, gb) {
+                var gulpBuild = exec('gulp build --color', function (gberr, gbout, gb) {
                     if (gberr) {
                         console.log(gberr);
                     } else {

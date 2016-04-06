@@ -35,7 +35,7 @@ function Prepub(c) {
                         console.log(('Failed. File：[' + filePath + '] failed to publish! Retrying ' + (i + 1) + ' times.\n').red);
                         publish(file.path, publishType, group, repoName, filePath);
                         i++;
-                    }else{
+                    } else {
                         console.log('\nMaybe there is a problems with AWP, please retry `prepub` or `publish` again, If the problem persists, concat @maquan.\n'.red);
                         process.exit();
                     }

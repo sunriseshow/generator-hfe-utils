@@ -54,32 +54,35 @@ module.exports = function (gulp, Plugin, config) {
                 } catch (e) {
                     console.log('Can not find repo-info.json file, please try again.'.red);
                 }
-                var buildPrepub = exec('gulp build:prepub', function (err, stdout, stderr) {
+                var buildPrepub = exec('gulp build:prepub --color', function (err, stdout, stderr) {
                     if (err) {
                         console.log(err);
-                    }
-                    exec('git rev-parse --abbrev-ref HEAD', function (e, out, se) {
-                        var o = out.replace(/\r|\n/ig,"");
-                        exec(command.prepub(o, res.msg), function (err, stdout, stderr) {
-                            // o ==> daily/0.1.0 当前分支名
-                            var msg = '命令 >>> ' + command.prepub(o, res.msg) + ' <<< 的执行结果：';
-                            console.log(msg.green);
-                            if (err) {
-                                console.log(err);
-                            } else {
-                                console.log(stdout);
-                                console.log(stderr);
-                                var gulpJudge = spawn('gulp', ['hfe-judgetag', '--env', 'prepub']);
-                                gulpJudge.stdout.pipe(process.stdout);
-                                gulpJudge.stderr.pipe(process.stderr);
-                                gulpJudge.on('close', function (code) {
-                                    if (code === 0) {
-                                        gulp.run('hfe-prepub:html');
-                                    }
-                                });
-                            }
+
+                    } else {
+                        exec('git rev-parse --abbrev-ref HEAD', function (e, out, se) {
+                            var o = out.replace(/\r|\n/ig, "");
+                            exec(command.prepub(o, res.msg), function (err, stdout, stderr) {
+                                // o ==> daily/0.1.0 当前分支名
+                                var msg = '命令 >>> ' + command.prepub(o, res.msg) + ' <<< 的执行结果：';
+                                console.log(msg.green);
+                                if (err) {
+                                    console.log(err);
+                                } else {
+                                    console.log(stdout);
+                                    console.log(stderr);
+                                    var gulpJudge = spawn('gulp', ['hfe-judgetag', '--env', 'prepub']);
+                                    gulpJudge.stdout.pipe(process.stdout);
+                                    gulpJudge.stderr.pipe(process.stderr);
+                                    gulpJudge.on('close', function (code) {
+                                        if (code === 0) {
+                                            gulp.run('hfe-prepub:html');
+                                        }
+                                    });
+                                }
+                            });
                         });
-                    });
+                    }
+
                 });
                 buildPrepub.stdout.pipe(process.stdout);
                 buildPrepub.stderr.pipe(process.stderr);
