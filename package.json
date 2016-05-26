@@ -1,46 +1,47 @@
 {
-    "name": "generator-hfe-utils",
-    "version": "1.1.15",
-    "description": "for generator-hfe",
-    "main": "./lib/index",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/Real0n/generator-hfe-utils.git"
-    },
-    "keywords": [
-        "generator"
-    ],
-    "author": "maquan",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/Real0n/generator-hfe-utils/issues"
-    },
-    "homepage": "https://github.com/Real0n/generator-hfe-utils#readme",
-    "dependencies": {
-        "browser-sync": "^2.10.1",
-        "browsersync-ssi": "^0.2.4",
-        "colors": "^1.1.2",
-        "del": "^2.0.2",
-        "fs-extra": "^0.26.2",
-        "gulp": "3.9.0",
-        "gulp-combo": "^0.1.9",
-        "gulp-cssmin": "^0.1.7",
-        "gulp-jsmin": "^0.1.5",
-        "gulp-json-editor": "^2.2.1",
-        "gulp-load-plugins": "^1.1.0",
-        "gulp-pre-combo": "^1.0.13",
-        "gulp-prompt": "^0.1.2",
-        "gulp-rename": "^1.2.2",
-        "gulp-sass": "^2.0.4",
-        "path": "^0.12.7",
-        "ssi": "^0.3.0",
-        "through2": "^2.0.0",
-        "url-complete": "^1.0.4"
-    },
-    "devDependencies": {
-        "eslint-config-hfe": "^1.0.5"
-    }
+  "name": "generator-hfe-utils",
+  "version": "1.1.15",
+  "description": "for generator-hfe",
+  "main": "./lib/index",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Real0n/generator-hfe-utils.git"
+  },
+  "keywords": [
+    "generator"
+  ],
+  "author": "maquan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Real0n/generator-hfe-utils/issues"
+  },
+  "homepage": "https://github.com/Real0n/generator-hfe-utils#readme",
+  "dependencies": {
+    "bluebird": "^3.4.0",
+    "browser-sync": "^2.10.1",
+    "browsersync-ssi": "^0.2.4",
+    "colors": "^1.1.2",
+    "del": "^2.0.2",
+    "fs-extra": "^0.26.2",
+    "gulp": "3.9.0",
+    "gulp-combo": "^0.1.9",
+    "gulp-cssmin": "^0.1.7",
+    "gulp-jsmin": "^0.1.5",
+    "gulp-json-editor": "^2.2.1",
+    "gulp-load-plugins": "^1.1.0",
+    "gulp-pre-combo": "^1.0.13",
+    "gulp-prompt": "^0.1.2",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.0.4",
+    "path": "^0.12.7",
+    "ssi": "^0.3.0",
+    "through2": "^2.0.0",
+    "url-complete": "^1.0.4"
+  },
+  "devDependencies": {
+    "eslint-config-hfe": "^1.0.5"
+  }
 }
