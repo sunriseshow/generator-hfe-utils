@@ -9,8 +9,7 @@ module.exports = function (gulp, Plugin, config) {
             var includes = new SSI(inputDirectory, outputDirectory, matcher);
             includes.compile();
         } else {
-            console.log('You have alreay disable SSI.'.red);
+            console.log('Eh...You have alreay disabled SSI'.red);
         }
-
     });
 }

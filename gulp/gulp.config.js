@@ -26,6 +26,7 @@ module.exports = {
         'vip': ['pc:vip:publish', 'pc:vip:prepub'],
         'h5': ['h5:publish', 'h5:prepub'],
         'pc': ['pc:publish', 'pc:prepub'],
+        'dp': ['h5:dp:publish', 'h5:dp:prepub'],
         'staging': ['pc:staging'],
         'test01': ['test01'],
         'test02': ['test02'],

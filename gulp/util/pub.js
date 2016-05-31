@@ -40,7 +40,7 @@ function Prepub(c) {
                         process.exit();
                     }
                 } else {
-                    console.log(('Successfully. Url: ' + stdout + '.').green);
+                    console.log(('Successfully. Url: ' + stdout + '').green);
                 }
             });
         }
