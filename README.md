@@ -33,4 +33,5 @@ by maquan@meituan.com
     * 去掉hfe标签
     * publish增加提交过程
 * 1.1.4 删除hfe标记，更改combo规则
-* 1.1.13 支持ssi 配置。
+* 1.1.13 支持ssi 配置；
+* 1.1.18 Bug Fix - 修复http协议的git地址获取group及reponame的方式；
